@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
+gem 'slim-rails'
 
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
