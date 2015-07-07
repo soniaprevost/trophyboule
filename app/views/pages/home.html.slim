@@ -1,1 +1,12 @@
-h1 hello, world
+.container
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3.text-center
+      = image_tag('trophyboule.png')
+      .margin-40
+        - if user_signed_in?
+          = "hello"
+        - else
+          .margin-20
+            = link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "btn btn-primary"
+          .margin-20
+            = link_to t(".log_in", default: "Log in"), new_user_session_path, class: "btn btn-primary"
