@@ -15,7 +15,11 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to "#" do %>
-            <%= image_tag "http://placehold.it/30x30", class: "img-avatar" %>
+            <% if current_user.provider %>
+              <%= image_tag current_user.picture, class: "img-avatar" %>
+            <% else %>
+              <%= current_user.name %>
+            <% end %>
           <% end %>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
