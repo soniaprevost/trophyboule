@@ -1,0 +1,19 @@
+.container
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3.text-center.ptop-20.pbottom-20.bg-grayish
+        = simple_form_for @team_member, url: game_team_members_path, method: :post do |tm|
+          .form-inline.text-center
+            .inline.
+              = tm.input :name, placeholder: 'Name of player', label: false, autofocus: true, class:"hspace-10"
+              = tm.button :submit, "+", class:"btn btn-success hspace-10"
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3.ptop-20
+      - @team_members.each do |tm|
+        = render 'team_member', tm: tm
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3.text-center.ptop-20
+      p= "Total of players: #{@team_members.count}"
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3.text-center.ptop-20
+
+

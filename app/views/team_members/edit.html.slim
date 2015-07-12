@@ -1,0 +1,6 @@
+.container
+  .row
+    .col-xs-12.col-sm-6.col-sm-offset-3.text-center.ptop-20
+      = simple_form_for @team_member, url: game_team_member_path(@game, @team_member) do |tm|
+          = tm.input :name, label: 'Update Player\'s name'
+          = tm.button :submit, 'update', class: 'btn btn-success'
