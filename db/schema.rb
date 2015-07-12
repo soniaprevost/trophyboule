@@ -27,14 +27,15 @@ ActiveRecord::Schema.define(version: 20150712143925) do
   add_index "games", ["user_id"], name: "index_games_on_user_id", using: :btree
 
   create_table "team_members", force: :cascade do |t|
-    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "game_id"
     t.integer  "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "team_members", ["game_id"], name: "index_team_members_on_game_id", using: :btree
   add_index "team_members", ["team_id"], name: "index_team_members_on_team_id", using: :btree
-  add_index "team_members", ["user_id"], name: "index_team_members_on_user_id", using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
@@ -70,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150712143925) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "games", "users"
+  add_foreign_key "team_members", "games"
   add_foreign_key "team_members", "teams"
-  add_foreign_key "team_members", "users"
   add_foreign_key "teams", "games"
 end
