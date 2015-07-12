@@ -2,4 +2,9 @@
   .row
     .col-xs-12.col-sm-6.col-sm-offset-3
       h1= @game.name
-      h1= @game.startdate
+      h1= @game.startdate.strftime("%d/%m/%Y")
+      - @game.teams.each do |t|
+        ul.list-inline
+          li= t.name.capitalize
+          - t.team_members.each do |tm|
+            li= tm.name.capitalize

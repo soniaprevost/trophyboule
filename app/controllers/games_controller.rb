@@ -36,7 +36,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :startdate)
+    params.require(:game).permit(:name, :startdate, :team_number, :team_members_max)
   end
 
   def find_game
