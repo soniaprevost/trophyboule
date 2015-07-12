@@ -7,6 +7,8 @@
           = "hello"
         - else
           .margin-20
+            = link_to t(".connect", default: "Create an account"), new_user_registration_path, class: "btn btn-lg btn-facebook btn-width-200"
+          .margin-20
             = link_to t(".connect", default: "Connect with Facebook", provider: "Facebook"), user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-facebook btn-width-200"
           .margin-20
             = link_to t(".connect", default: "Connect with Google", provider: "Google"), user_omniauth_authorize_path(:google_oauth2), class: "btn btn-lg btn-google-plus btn-width-200"
