@@ -1,7 +1,9 @@
 .container
   .row
     .col-xs-12.col-sm-6.col-sm-offset-3
-      = simple_form_for @game do |f|
-        = f.input :name
-        = f.input :startdate
-        = f.submit
+      = simple_form_for @game do |g|
+        = g.input :name
+        = g.input :startdate
+        = g.input :team_number, label: "Number of teams"
+        = g.input :team_members_max, label: "Number of players per teams"
+        = g.submit

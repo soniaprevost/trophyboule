@@ -13,7 +13,8 @@
   .row
     .col-xs-12.col-sm-6.col-sm-offset-3.text-center.ptop-20
       p= "Total of players: #{@team_members.count}"
-  .row
-    .col-xs-12.col-sm-6.col-sm-offset-3.text-center.ptop-20
-
+  - if @game.completed_teams
+    .row
+      .col-xs-12.col-sm-6.col-sm-offset-3.text-center.ptop-20
+        = link_to 'Let\'s start', game_path(@game), class: "btn btn-success"
 
