@@ -1,7 +1,7 @@
 /* -------------------------------------
  * Colors & Fonts
  * ------------------------------------- */
-$navbar-color: $gray-light;
+$navbar-color: black;
 $navbar-hover-color: $yellow;
 $navbar-font-family: $navbar-font;
 $navbar-font-size: 14px;
@@ -40,6 +40,7 @@ $navbar-profile-border-width: 2px;
  * SCSS code
  * ------------------------------------- */
 .navbar-wagon {
+  margin-top: 10px;
   background: $navbar-bg;
   font-family: $navbar-font-family;
   border: none;
@@ -73,6 +74,8 @@ $navbar-profile-border-width: 2px;
 
   .navbar-brand,
   .navbar-brand:hover {
+    margin-top: 10px;
+    text-transform: uppercase;
     outline: none;
     color: $navbar-color;
     padding-top: $navbar-vertical-padding;
@@ -108,7 +111,8 @@ $navbar-profile-border-width: 2px;
   }
 
   .navbar-toggle {
-    border-color: #dddddd;
+    border-color: white;
+    background-color: white;
     width: 45px;
     background: transparent;
   }

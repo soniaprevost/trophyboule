@@ -6,3 +6,11 @@ img {
   width: 250px;
   padding: 10px
 }
+
+.bg-pic {
+  background: image-url('trophy-bg.jpeg');
+  background-size: cover;
+  height: 1200px;
+  margin-top: -30px;
+  z-index: 9999;
+}
