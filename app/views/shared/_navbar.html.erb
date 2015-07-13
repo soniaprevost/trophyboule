@@ -1,31 +1,39 @@
 <nav class="navbar navbar-default navbar-wagon" role="navigation">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+    <div class="navbar-header margin-20">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <%= link_to 'LA BOULE TROPHY', root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to "#" do %>
-            <% if current_user.provider %>
-              <%= image_tag current_user.picture, class: "img-avatar" %>
-            <% else %>
-              <%= current_user.name %>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "#" do %>
+              <% if current_user.provider %>
+                <%= image_tag current_user.picture, class: "img-avatar" %>
+              <% elsif current_user.name %>
+                <%= current_user.name %>
+              <% else %>
+                <%= current_user.email %>
+              <% end %>
             <% end %>
-          <% end %>
-        <li>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Sign out" %>
-          <% end %>
-        </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'wesh', new_user_session_path, class: "btn btn-lg btn-primary btn-width-200" %>
+          </li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -1,0 +1,21 @@
+.container-fluid.bg-pic
+  .row.margin-40
+    .col-xs-12.col-sm-6.col-sm-offset-3.text-center
+      = image_tag('trophyboule.png', class: "img-responsive")
+      .margin-40
+        - if user_signed_in?
+          = "hello"
+        - else
+          ul.list-inline
+            .col-xs-12
+              li.margin-10
+                = link_to t(".connect", default: "Sign In"), new_user_registration_path, class: "btn btn-lg btn-primary btn-width-200"
+            .col-xs-12
+              li.margin-10
+                = link_to t(".connect", default: "Log In"), new_user_session_path, class: "btn btn-lg btn-primary btn-width-200"
+            .col-xs-12
+              li.margin-10
+                = link_to t(".connect", default: "Connect with Facebook", provider: "Facebook"), user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-primary btn-width-200"
+            .col-xs-12
+              li.margin-10
+                = link_to t(".connect", default: "Connect with Google", provider: "Google"), user_omniauth_authorize_path(:google_oauth2), class: "btn btn-lg btn-primary btn-width-200"
