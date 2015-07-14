@@ -1,10 +1,14 @@
-.container
-  .row
-    .col-xs-12.col-sm-6.col-sm-offset-3
-      h1= @game.name
-      h1= @game.startdate.strftime("%d/%m/%Y")
+.container-fluid.bg-pic
+  .row.margin-20
+    .col-xs-12.col-sm-6.col-sm-offset-3.text-center
+      h2= @game.name.upcase
+      h3= @game.startdate.strftime("%d/%m/%Y")
+  .row.margin-20
       - @game.teams.each do |t|
         ul.list-inline
-          li= t.name.capitalize
-          - t.team_members.each do |tm|
-            li= tm.name.capitalize
+          .col-xs-12.text-center.margin-20
+            li
+            h4= t.name.capitalize
+            - t.team_members.each do |tm|
+              .col-xs-6
+                li= tm.name.capitalize

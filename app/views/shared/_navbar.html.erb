@@ -31,7 +31,8 @@
           </li>
         <% else %>
           <li>
-            <%= link_to 'wesh', new_user_session_path, class: "btn btn-lg btn-primary btn-width-200" %>
+            <%= link_to '<i class="fa fa-sign-in"></i>
+'.html_safe, new_user_session_path, class: "margin-10" %>
           </li>
         <% end %>
       </ul>

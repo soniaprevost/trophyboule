@@ -1,5 +1,12 @@
-.container
+.container-fluid.bg-pic
   .row
-    .col-xs-12.col-sm-6.col-sm-offset-3
-      - @games.each do |game|
-        = link_to game.name, game_path(game)
+    - @games.each do |game|
+      ul.list-inline
+        .col-xs-12.text-center.margin-20
+          li
+            h4= link_to game.name.upcase, game_path(game)
+        .col-xs-12.text-center
+          li
+            i.fa.fa-star
+            i.fa.fa-star
+            i.fa.fa-star

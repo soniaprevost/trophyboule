@@ -7,12 +7,12 @@
           = "hello"
         - else
           .col-xs-12.margin-20
-            h2= 'Log in'
-            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-              = f.input :email, required: false, autofocus: true
-              = f.input :password, required: false
-              = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-              = f.button :submit, "Log in", class: "btn btn-lg btn-success btn-width-200 margin-10"
+            h2= 'Sign up'
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = f.input :email, required: true, autofocus: true
+              = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+              = f.input :password_confirmation, required: true
+              = f.button :submit, "Sign up"
           ul.list-inline
             .col-xs-12
               li.margin-10

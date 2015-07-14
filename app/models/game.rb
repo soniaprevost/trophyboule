@@ -12,7 +12,7 @@ class Game < ActiveRecord::Base
   def create_teams
     c = 0
     # improve the way names are attributed, make them dependent of team_members_max
-    names = ["paris", "chateauroux", "roubaix", "avignon", "surry", "marseille", "briançon", "nantes"]
+    names = ["paris", "chateauroux", "londres", "nyons", "sao paulo", "portland", "venise", "bruxelles", "roubaix", "avignon", "surry", "marseille", "briançon", "nantes", "lyon", "cabannes", "la rochelle", "ardantes", "new-york", "souillac", "biarritz", "stockholm"]
     while c < self.team_number
       team = Team.create(name: names.delete_at(rand(names.length)), game_id: self.id)
       names
